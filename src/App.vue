@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheCanvas from "@/components/TheCanvas.vue";
+</script>
 
 <template>
-  <h1 class="text-2xl font-bold underline">Hello world!</h1>
+  <TheCanvas />
 </template>
 
 <style scoped></style>
