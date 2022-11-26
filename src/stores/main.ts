@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 
 export const useStore = defineStore("main", () => {
   const selectedSize = ref(12);
-  const sizes = ref([8, 14, 24, 48]);
+  const sizes = ref([8, 14, 24, 32]);
   const selectedColor = ref("#2d13f7");
   const colors = ref([
     "#d4f713",
