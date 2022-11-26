@@ -2,9 +2,9 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useStore = defineStore("main", () => {
-  const size = ref(12);
+  const selectedSize = ref(12);
   const sizes = ref([8, 14, 24, 48]);
-  const color = ref();
+  const selectedColor = ref("#2d13f7");
   const colors = ref([
     "#d4f713",
     "#13f7ab",
@@ -26,17 +26,17 @@ export const useStore = defineStore("main", () => {
   ]);
 
   function setSize(newSize: number) {
-    size.value = newSize;
+    selectedSize.value = newSize;
   }
 
   function setColor(newColor: string) {
-    color.value = newColor;
+    selectedColor.value = newColor;
   }
 
   return {
-    size,
+    selectedSize,
     sizes,
-    color,
+    selectedColor,
     colors,
     setSize,
     setColor,
