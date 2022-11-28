@@ -2,6 +2,8 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useStore = defineStore("main", () => {
+  const shouldClear = ref(false);
+
   const selectedSize = ref(14);
   const sizes = ref([8, 14, 24, 32]);
   const selectedColor = ref("#2d13f7");
@@ -33,12 +35,18 @@ export const useStore = defineStore("main", () => {
     selectedColor.value = newColor;
   }
 
+  function setShouldClear(newValue: boolean) {
+    shouldClear.value = newValue;
+  }
+
   return {
+    shouldClear,
     selectedSize,
     sizes,
     selectedColor,
     colors,
     setSize,
     setColor,
+    setShouldClear,
   };
 });

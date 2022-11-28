@@ -6,8 +6,12 @@ import {
   SwatchIcon,
   XCircleIcon,
 } from "@heroicons/vue/24/outline";
+import { useStore } from "@/stores/main";
 import SizePanel from "./panels/SizePanel.vue";
 import ColorPanel from "./panels/ColorPanel.vue";
+
+const store = useStore();
+const { setShouldClear } = store;
 
 const items = [
   {
@@ -32,7 +36,7 @@ const items = [
     key: "clear",
     title: "Clear",
     icon: XCircleIcon,
-    action: () => console.log("Clear canvas"),
+    action: () => setShouldClear(true),
   },
 ];
 </script>
