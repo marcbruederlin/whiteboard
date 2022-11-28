@@ -17,7 +17,10 @@ const { selectedSize, sizes, selectedColor } = storeToRefs(store);
         height: `${size}px`,
         backgroundColor: selectedColor,
       }"
-      :class="{ 'border-4': size === selectedSize }"
+      :class="{
+        'border-2 border-white outline outline-2 outline-red-500':
+          size === selectedSize,
+      }"
       @click="setSize(size)"
       class="rounded-full"
     ></button>

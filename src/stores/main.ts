@@ -2,7 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useStore = defineStore("main", () => {
-  const selectedSize = ref(12);
+  const selectedSize = ref(14);
   const sizes = ref([8, 14, 24, 32]);
   const selectedColor = ref("#2d13f7");
   const colors = ref([
