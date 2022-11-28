@@ -13,7 +13,7 @@ const { selectedColor, colors } = storeToRefs(store);
       v-for="color in colors"
       :key="color"
       :style="{ backgroundColor: color }"
-      :class="{ 'border-4': color === selectedColor }"
+      :class="{ 'border-4 dark:border-white': color === selectedColor }"
       @click="setColor(color)"
       class="w-6 h-6 rounded-full"
     ></button>
