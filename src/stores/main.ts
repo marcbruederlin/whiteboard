@@ -2,11 +2,14 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useStore = defineStore("main", () => {
+  const defaultSize = localStorage.getItem("whiteboard:size") || 14;
+  const defaultColor = localStorage.getItem("whiteboard:color") || "#2d13f7";
+
   const shouldClear = ref(false);
 
-  const selectedSize = ref(14);
+  const selectedSize = ref(+defaultSize);
   const sizes = ref([8, 14, 24, 32]);
-  const selectedColor = ref("#2d13f7");
+  const selectedColor = ref(defaultColor);
   const colors = ref([
     "#d4f713",
     "#13f7ab",
@@ -29,10 +32,12 @@ export const useStore = defineStore("main", () => {
 
   function setSize(newSize: number) {
     selectedSize.value = newSize;
+    localStorage.setItem("whiteboard:size", `${newSize}`);
   }
 
   function setColor(newColor: string) {
     selectedColor.value = newColor;
+    localStorage.setItem("whiteboard:color", newColor);
   }
 
   function setShouldClear(newValue: boolean) {

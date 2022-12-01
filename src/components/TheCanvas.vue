@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useStore } from "@/stores/main";
-import { useMouse } from "@/composables/mouse";
 
 const props = withDefaults(
   defineProps<{
@@ -13,7 +12,6 @@ const props = withDefaults(
   }
 );
 
-const { x, y } = useMouse();
 const store = useStore();
 const { setShouldClear } = store;
 const { selectedColor, selectedSize } = storeToRefs(store);
