@@ -27,12 +27,6 @@ const items = [
     panel: ColorPanel,
   },
   {
-    key: "undo",
-    title: "Undo",
-    icon: ArrowUturnLeftIcon,
-    action: () => console.log("Undo last action"),
-  },
-  {
     key: "clear",
     title: "Clear",
     icon: XCircleIcon,
